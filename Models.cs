@@ -1,4 +1,5 @@
 
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Bank.Models
@@ -27,6 +28,7 @@ namespace Bank.Models
   public class User
   {
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    [Key]
     public long UID { get; set; }
     public string Name { get; set; }
     public string Hash { get; set; }
@@ -38,6 +40,7 @@ namespace Bank.Models
   public class Account
   {
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    [Key]
     public long ID { get; set; }
 
     public decimal Balance { get; set; }
@@ -47,6 +50,7 @@ namespace Bank.Models
   public class Transaction
   {
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    [Key]
     public long ID { get; set; }
 
     [DatabaseGenerated(DatabaseGeneratedOption.Computed)]

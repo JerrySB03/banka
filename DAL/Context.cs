@@ -11,6 +11,7 @@ public class BankContext : DbContext
 
   protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
   {
+    UI.Frontend.Log("Connecting to database", UI.LogLevel.Debug);
     optionsBuilder.UseSqlite("Data Source=bank.db");
   }
 }
